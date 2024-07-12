@@ -1,0 +1,56 @@
+﻿@model IEnumerable<RoleViewModel>
+@{
+    ViewData["Title"] = "All Roles";
+}
+
+<h1>All Roles</h1>
+<br />
+
+<br />
+<a asp-action="Create" class="btn btn-primary">Create New Role</a>
+<div class="row justify-content-center align-items-center mt-3">
+    <form class="row col-8 offset-1">
+        <div class="col-8">
+            <input type="text" class="form-control" placeholder="Search By Name" name="name" />
+        </div>
+        <div class="col-4">
+            <input type="submit" value="search" class="btn btn-success" />
+        </div>
+    </form>
+</div>
+<br />
+@if (Model.Count() > 0)
+{
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(R=>R.Id)</th>
+                <th>@Html.DisplayNameFor(R=>R.RoleName)</th>
+               
+                <th>Details</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var role in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(M=>role.Id)</td>
+                    <td>@Html.DisplayFor(M=>role.RoleName)</td>
+                    
+                 
+                    <partial name="_ButtonsPartialView" model="@role.Id"></partial>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="mt-4 alert alert-warning">
+        <h3>There Is No Roles:( </h3>
+    </div>
+}
+
+

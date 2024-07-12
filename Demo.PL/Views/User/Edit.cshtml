@@ -1,0 +1,20 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<h1>Edit User</h1>
+
+
+<form method="post" asp-action="Edit">
+
+    <partial name="PartialViews/AddEditUserPartialView"></partial>
+    <input type="submit" value="Save" class="btn btn-primary" /> |
+    <a asp-action="Index" class="btn btn-light">Back To List</a>
+</form>
+@section ValidationScriptSection{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+

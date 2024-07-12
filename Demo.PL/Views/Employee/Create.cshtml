@@ -1,0 +1,63 @@
+﻿@model EmployeeViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create New Employee</h1>
+<br />
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+
+    <partial name="PartialViews/AddEditPartialView"></partial>
+    @*<div class="form-group">
+    <label class="col-form-label" asp-for="Name"></label>
+    <input class="form-control" asp-for="Name"/>
+    <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+    <label class="col-form-label" asp-for="Age"></label>
+    <input class="form-control" asp-for="Age" />
+    </div>
+
+
+    <div class="form-group">
+    <label class="col-form-label" asp-for="Address"></label>
+    <input class="form-control" asp-for="Address" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="col-form-label" asp-for="Salary"></label>
+        <input class="form-control" asp-for="Salary" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+    <label class="col-form-label" asp-for="IsActive"></label>
+    <input class="form-check" asp-for="IsActive" />
+    </div>
+
+    <div class="form-group">
+    <label class="col-form-label" asp-for="Email"></label>
+    <input class="form-control" asp-for="Email" />
+    </div>
+
+    <div class="form-group">
+    <label class="col-form-label" asp-for="PhoneNumber"></label>
+    <input class="form-control" asp-for="PhoneNumber" />
+    </div>
+
+
+    <div class="form-group">
+    <label class="col-form-label" asp-for="HiringDate"></label>
+    <input class="form-control" asp-for="HiringDate" />
+    </div>*@
+    <input type="submit" value="Create" class="btn btn-primary" /> |
+    <a asp-controller="Employee" asp-action="Index" class="btn btn-light">Back To List</a>
+</form>
+@section ValidationScriptSection{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
